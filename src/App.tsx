@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import JsonInput from './components/JsonInput';
+import JsonToTypescript from './components/JsonToTypescript';
+import TypescriptOutput from './components/TypescriptOutput';
+import styles from './App.module.scss';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
+    <div className={styles.app}>
+      <JsonToTypescript />
+      <div className={styles.head}>
+        <h2>JSON literal typer</h2>
+      </div>
+      <div className={styles.code}>
+        <JsonInput />
+        <TypescriptOutput />
+      </div>
+      <div className={styles.foot}>
+        source on{' '}
         <a
-          className="App-link"
-          href="https://reactjs.org"
+          href="https://github.com/pabra/json-literal-typer"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          GitHub
         </a>
-      </header>
+      </div>
     </div>
   );
-}
+};
 
 export default App;

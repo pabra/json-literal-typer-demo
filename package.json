@@ -1,25 +1,56 @@
 {
   "name": "json-literal-typer-demo",
   "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@types/jest": "24.0.18",
-    "@types/node": "12.7.8",
-    "@types/react": "16.9.3",
-    "@types/react-dom": "16.9.1",
-    "react": "^16.10.1",
-    "react-dom": "^16.10.1",
-    "react-scripts": "3.1.2",
-    "typescript": "3.6.3"
-  },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "BROWSER=none react-scripts start",
+    "prebuild": "[ -d build ] && rm -rfv build/* || true",
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:ci": "CI=true react-scripts test --env=jsdom",
+    "lint": "eslint src/ --ext .js --ext .ts --ext .jsx --ext .tsx",
+    "compress": "node ./scripts/compress_build.js",
+    "predeploy": "npm run lint && npm run test:ci && npm run build && npm run compress",
+    "deploy": "./scripts/deploy.sh",
+    "deploy:only": "./scripts/deploy.sh",
+    "compress": "node ./scripts/compress_build.js",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pabra/json-literal-typer-demo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pabra/json-literal-typer-demo/issues"
+  },
+  "homepage": "https://json-literal-typer.peppnet.de",
+  "author": "Patrick Braune <pabra@netzfruech.de>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/jest": "24.0.18",
+    "@types/js-beautify": "^1.8.1",
+    "@types/node": "^12.7.11",
+    "@types/prettier": "^1.18.3",
+    "@types/react": "^16.9.5",
+    "@types/react-dom": "16.9.1",
+    "@typescript-eslint/eslint-plugin": "^2.3.2",
+    "@typescript-eslint/parser": "^2.3.2",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-jest": "^22.17.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.15.1",
+    "eslint-plugin-react-hooks": "^2.1.2",
+    "js-beautify": "^1.10.2",
+    "json-literal-typer": "0.0.1",
+    "node-sass": "^4.12.0",
+    "prettier": "^1.18.2",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-hooksack": "^1.3.6",
+    "react-scripts": "3.2.0",
+    "source-map-explorer": "^2.1.0",
+    "typescript": "3.6.3"
   },
   "browserslist": {
     "production": [
