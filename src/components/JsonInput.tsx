@@ -6,9 +6,9 @@ import beautifyOptions from '../lib/beautifyOptions';
 import styles from './JsonInput.module.scss';
 
 const defaultContent = `{ "stations": [
-    { "id": 1, "name": "station A", "status": "OPEN", "attibutes": ["fast"] },
-    { "id": 2, "name": "station B", "status": "OPEN", "attibutes": ["fast", "24/7"], "operator": "Station Corp." },
-    { "id": 3, "name": "station C", "status": "CLOSED", "attibutes": [], "operator": "ACME Inc." }
+    { "id": 1, "name": "station A", "status": "OPEN", "attributes": ["fast"] },
+    { "id": 2, "name": "station B", "status": "OPEN", "attributes": ["fast", "24/7"], "operator": "Station Corp." },
+    { "id": 3, "name": "station C", "status": "CLOSED", "attributes": [], "operator": "ACME Inc." }
   ]}`;
 
 const JsonInput = () => {
