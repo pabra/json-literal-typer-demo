@@ -9,7 +9,7 @@ const TypescriptOutput = () => {
   const [typescriptStr] = store.useTypesciptString();
   const beauty = jsBeautify(typescriptStr, beautifyOptions);
   const spaced = beauty
-    .replace(/(\})(\r?\n)(interface )/g, '$1$2$2$3')
+    .replace(/(\r?\n)((?:interface|type) )/g, '$1$1$2')
     .replace(/(\w) \? : /g, '$1?: ');
 
   return (
