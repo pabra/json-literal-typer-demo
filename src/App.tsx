@@ -3,6 +3,7 @@ import React from 'react';
 import JsonInput from './components/JsonInput';
 import JsonToTypescript from './components/JsonToTypescript';
 import TypescriptOutput from './components/TypescriptOutput';
+import Footer from './components/Footer';
 import styles from './App.module.scss';
 
 const App: React.FC = () => {
@@ -17,14 +18,7 @@ const App: React.FC = () => {
         <TypescriptOutput />
       </div>
       <div className={styles.foot}>
-        source on{' '}
-        <a
-          href="https://github.com/pabra/json-literal-typer"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub
-        </a>
+        <Footer />
       </div>
     </div>
   );

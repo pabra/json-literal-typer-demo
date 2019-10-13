@@ -1,0 +1,7 @@
+.root {
+  display: flex;
+}
+
+.box {
+  flex: 1;
+}
