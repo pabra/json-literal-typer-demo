@@ -5,18 +5,22 @@ import store from '../lib/store';
 
 const JsonToTypescript = () => {
   const [jsonString] = store.useJsonString();
+  const [config] = store.useConfig();
   const [, setTypescriptString] = store.useTypesciptString();
+  const [, setAnalyzedData] = store.useAnalyzedData();
 
   useEffect(() => {
     if (!jsonString) {
       setTypescriptString('');
+      setAnalyzedData(null);
       return;
     }
 
     const analyzed = analyze(JSON.parse(jsonString));
-    const typified = typify(analyzed);
+    const typified = typify(analyzed, config);
     setTypescriptString(typified);
-  }, [jsonString, setTypescriptString]);
+    setAnalyzedData(analyzed);
+  }, [jsonString, setTypescriptString, setAnalyzedData, config]);
 
   return null;
 };

@@ -1,0 +1,11 @@
+.type {
+  font-family: monospace;
+  margin-right: 5px;
+  margin-right: 10px;
+  font-style: italic;
+}
+
+.name {
+  font-weight: bold;
+  color: #555;
+}

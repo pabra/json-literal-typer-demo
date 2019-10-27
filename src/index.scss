@@ -19,6 +19,19 @@ code,
     monospace;
 }
 
+h1 {
+  font-size: 1.5em;
+}
+
+h2 {
+  font-size: 1.2em;
+  margin: 0.2em 0 0.4em 0;
+}
+
+.CodeMirror {
+  height: 100%;
+}
+
 .code {
   border: 1px solid #333;
   outline: none;
@@ -30,4 +43,104 @@ code,
   &.invalid {
     border-color: red;
   }
+}
+
+.content-box {
+  border: 1px solid #ccc;
+}
+
+.data-tree-box {
+  border-color: #999;
+  border-style: solid;
+  border-width: 1px 0 1px 1px;
+
+  label {
+    display: block;
+  }
+
+  &.string {
+    .title {
+      color: hsl(330, 50%, 40%);
+    }
+    .value {
+      background-color: hsl(330, 40%, 80%);
+    }
+  }
+
+  &.number {
+    .title {
+      color: hsl(210, 50%, 40%);
+    }
+    .value {
+      background-color: hsl(210, 40%, 80%);
+    }
+  }
+
+  &.boolean {
+    .title {
+      color: hsl(130, 50%, 40%);
+    }
+    .value {
+      background-color: hsl(130, 40%, 80%);
+    }
+  }
+
+  &.null {
+    .title {
+      color: hsl(0, 0%, 40%);
+    }
+    .value {
+      background-color: hsl(0, 0%, 80%);
+    }
+  }
+
+  &.even {
+    background-color: #eee;
+  }
+
+  &.odd {
+    background-color: #ddd;
+  }
+
+  &.highlight,
+  &:not(.object):not(.array):hover {
+    background-color: #bdc;
+  }
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+
+  &.equal > * {
+    flex: 1 1 auto;
+    width: 0;
+  }
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+
+  &.equal > * {
+    flex: 1 1 auto;
+    height: 0;
+  }
+}
+
+.flex-1 {
+  flex: 1 1 auto;
+  height: 0;
+}
+
+.auto-overflow {
+  overflow: auto;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
 }

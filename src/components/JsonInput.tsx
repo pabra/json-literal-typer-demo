@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { js_beautify as jsBeautify } from 'js-beautify';
+import { Controlled as CodeMirror } from 'react-codemirror2';
+import 'codemirror/mode/javascript/javascript';
+import 'codemirror/lib/codemirror.css';
 
 import store from '../lib/store';
 import beautifyOptions from '../lib/beautifyOptions';
@@ -18,7 +21,6 @@ const JsonInput = () => {
   const trimmedInput = inputValue.trim();
   const isValid: null | boolean =
     trimmedInput === '' ? null : jsonError === '' ? true : false;
-  const jsonClassName = isValid === null ? '' : isValid ? 'valid' : 'invalid';
   const handleBeautify = () => {
     setInputValue(jsBeautify(inputValue, beautifyOptions));
   };
@@ -41,14 +43,19 @@ const JsonInput = () => {
   }, [trimmedInput, setJsonString]);
 
   return (
-    <div className={styles.root}>
-      <h3>JSON input</h3>
-      <textarea
-        spellCheck={false}
+    <div className="flex-column content-box">
+      <h2 className="align-center">JSON input</h2>
+      <CodeMirror
         value={inputValue}
-        className={`code ${jsonClassName} ${styles.jsonInput}`}
-        onChange={ev => setInputValue(ev.target.value)}
-      ></textarea>
+        className="auto-overflow flex-1"
+        onBeforeChange={(_editor, _data, value) => setInputValue(value)}
+        options={{
+          mode: 'application/json',
+          lineNumbers: true,
+          spellcheck: false,
+          viewportMargin: Infinity,
+        }}
+      />
       <div className={styles.status}>
         {isValid === true && <button onClick={handleBeautify}>beautify</button>}
         {jsonError && <code>{jsonError}</code>}
