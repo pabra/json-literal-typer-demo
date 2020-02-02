@@ -16,7 +16,7 @@ const ConfigEdit = () => {
         className="auto-overflow flex-1"
         value={configStr}
         onBeforeChange={() => {}}
-        options={{ mode: 'text/typescript', readOnly: 'nocursor' }}
+        options={{ mode: 'text/typescript', readOnly: true }}
       />
     </div>
   );
