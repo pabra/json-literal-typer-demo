@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { js_beautify as jsBeautify } from 'js-beautify';
-import { Controlled as CodeMirror } from 'react-codemirror2';
-import 'codemirror/mode/javascript/javascript';
 import 'codemirror/lib/codemirror.css';
-
-import store from '../lib/store';
+import 'codemirror/mode/javascript/javascript';
+import { js_beautify as jsBeautify } from 'js-beautify';
+import React, { useEffect, useState } from 'react';
+import { Controlled as CodeMirror } from 'react-codemirror2';
 import beautifyOptions from '../lib/beautifyOptions';
+import store from '../lib/store';
 import styles from './JsonInput.module.scss';
 
 const defaultContent = `{ "stations": [

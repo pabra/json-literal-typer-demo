@@ -1,9 +1,8 @@
+import { BooleanObject } from 'json-literal-typer/dist/esm/analyze';
 import React, { useState } from 'react';
-import { BooleanObject } from 'json-literal-typer/lib/analyze';
-
+import store from '../lib/store';
 import TypeBoxTitle from './TypeBoxTitle';
 import Values from './Values';
-import store from '../lib/store';
 
 interface Props {
   evenOdd?: 'even' | 'odd';

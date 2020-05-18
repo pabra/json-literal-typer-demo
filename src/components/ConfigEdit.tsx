@@ -1,8 +1,7 @@
+import 'codemirror/lib/codemirror.css';
+import 'codemirror/mode/javascript/javascript';
 import React from 'react';
 import { Controlled as CodeMirror } from 'react-codemirror2';
-import 'codemirror/mode/javascript/javascript';
-import 'codemirror/lib/codemirror.css';
-
 import store from '../lib/store';
 
 const ConfigEdit = () => {
@@ -15,7 +14,9 @@ const ConfigEdit = () => {
       <CodeMirror
         className="auto-overflow flex-1"
         value={configStr}
-        onBeforeChange={() => {}}
+        onBeforeChange={() => {
+          // noop
+        }}
         options={{ mode: 'text/typescript', readOnly: true }}
       />
     </div>

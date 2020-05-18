@@ -1,5 +1,4 @@
 import React from 'react';
-
 import store from '../lib/store';
 import AnalyzedType from './AnalyzedType';
 

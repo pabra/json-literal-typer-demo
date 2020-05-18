@@ -1,10 +1,9 @@
+import { ArrayObject } from 'json-literal-typer/dist/esm/analyze';
 import React, { useState } from 'react';
-import { ArrayObject } from 'json-literal-typer/lib/analyze';
-
+import store from '../lib/store';
+import styles from './AnalyzedArrayType.module.css';
 import AnalyzedValuesByType from './AnalyzedValuesByType';
 import TypeBoxTitle from './TypeBoxTitle';
-import styles from './AnalyzedArrayType.module.css';
-import store from '../lib/store';
 
 interface Props {
   evenOdd?: 'even' | 'odd';

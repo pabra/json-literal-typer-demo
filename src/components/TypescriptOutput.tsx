@@ -1,11 +1,10 @@
-import React from 'react';
-import { js_beautify as jsBeautify } from 'js-beautify';
-import { Controlled as CodeMirror } from 'react-codemirror2';
-import 'codemirror/mode/javascript/javascript';
 import 'codemirror/lib/codemirror.css';
-
-import store from '../lib/store';
+import 'codemirror/mode/javascript/javascript';
+import { js_beautify as jsBeautify } from 'js-beautify';
+import React from 'react';
+import { Controlled as CodeMirror } from 'react-codemirror2';
 import beautifyOptions from '../lib/beautifyOptions';
+import store from '../lib/store';
 
 const TypescriptOutput = () => {
   const [typescriptStr] = store.useTypesciptString();
@@ -20,7 +19,9 @@ const TypescriptOutput = () => {
       <CodeMirror
         className="auto-overflow flex-1"
         value={spaced}
-        onBeforeChange={() => {}}
+        onBeforeChange={() => {
+          // noop
+        }}
         options={{ mode: 'text/typescript', readOnly: true }}
       />
     </div>

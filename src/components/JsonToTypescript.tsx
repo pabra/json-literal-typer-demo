@@ -1,6 +1,5 @@
-import { useEffect } from 'react';
 import analyze, { typify } from 'json-literal-typer';
-
+import { useEffect } from 'react';
 import store from '../lib/store';
 
 const JsonToTypescript = () => {

@@ -1,12 +1,12 @@
-import makeStore from 'react-hooksack';
 import {
-  NullObject,
-  BooleanObject,
-  NumberObject,
-  StringObject,
   ArrayObject,
+  BooleanObject,
+  NullObject,
+  NumberObject,
   ObjectObject,
-} from 'json-literal-typer/lib/analyze';
+  StringObject,
+} from 'json-literal-typer/dist/esm/analyze';
+import makeStore from 'react-hooksack';
 
 type AnalyzedData =
   | null
@@ -48,7 +48,7 @@ const configReducer = (state: Config, action: ConfigReducerAction) => {
 const store = {
   useJsonString: makeStore(''),
   useTypesciptString: makeStore(''),
-  useAnalyzedData: makeStore<AnalyzedData, never>(null),
+  useAnalyzedData: makeStore<AnalyzedData>(null),
   useConfig: makeStore<Config, typeof configReducer>(
     { byPath: {} },
     configReducer,

@@ -1,6 +1,5 @@
-import React from 'react';
 import typerPj from 'json-literal-typer/package.json';
-
+import React from 'react';
 import demoPJ from '../../package.json';
 import styles from './Footer.module.css';
 

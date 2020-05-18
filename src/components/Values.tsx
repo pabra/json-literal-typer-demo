@@ -1,5 +1,4 @@
 import React from 'react';
-
 import styles from './Values.module.scss';
 
 interface Props {

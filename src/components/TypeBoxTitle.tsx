@@ -1,6 +1,5 @@
+import { ValuesByType } from 'json-literal-typer/dist/esm/analyze';
 import React from 'react';
-import { ValuesByType } from 'json-literal-typer/lib/analyze';
-
 import styles from './TypeBoxTitle.module.css';
 
 interface Props {

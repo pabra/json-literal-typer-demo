@@ -1,19 +1,18 @@
-import React from 'react';
 import {
-  NullObject,
-  BooleanObject,
-  NumberObject,
-  StringObject,
   ArrayObject,
+  BooleanObject,
+  NullObject,
+  NumberObject,
   ObjectObject,
-} from 'json-literal-typer/lib/analyze';
-
-import AnalyzedNullType from './AnalyzedNullType';
-import AnalyzedBooleanType from './AnalyzedBooleanType';
-import AnalyzedNumberType from './AnalyzedNumberType';
-import AnalyzedStringType from './AnalyzedStringType';
+  StringObject,
+} from 'json-literal-typer/dist/esm/analyze';
+import React from 'react';
 import AnalyzedArrayType from './AnalyzedArrayType';
+import AnalyzedBooleanType from './AnalyzedBooleanType';
+import AnalyzedNullType from './AnalyzedNullType';
+import AnalyzedNumberType from './AnalyzedNumberType';
 import AnalyzedObjectType from './AnalyzedObjectType';
+import AnalyzedStringType from './AnalyzedStringType';
 
 interface Props {
   evenOdd?: 'even' | 'odd';

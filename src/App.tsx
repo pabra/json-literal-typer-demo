@@ -1,12 +1,11 @@
 import React from 'react';
-
-import JsonInput from './components/JsonInput';
-import JsonToTypescript from './components/JsonToTypescript';
-import TypescriptOutput from './components/TypescriptOutput';
-import TypeRepresentation from './components/TypeRepresentation';
+import styles from './App.module.scss';
 import ConfigEdit from './components/ConfigEdit';
 import Footer from './components/Footer';
-import styles from './App.module.scss';
+import JsonInput from './components/JsonInput';
+import JsonToTypescript from './components/JsonToTypescript';
+import TypeRepresentation from './components/TypeRepresentation';
+import TypescriptOutput from './components/TypescriptOutput';
 
 const App: React.FC = () => {
   return (
