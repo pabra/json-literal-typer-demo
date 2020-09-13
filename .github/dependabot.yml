@@ -11,5 +11,5 @@ updates:
     schedule:
       interval: 'daily'
     allow:
-      - package-name: 'json-literal-typer'
+      - dependency-name: 'json-literal-typer'
       - dependency-type: 'production'
