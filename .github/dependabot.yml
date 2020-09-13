@@ -12,4 +12,4 @@ updates:
       interval: 'daily'
     allow:
       - dependency-name: 'json-literal-typer'
-      - dependency-type: 'production'
+        dependency-type: 'production'
